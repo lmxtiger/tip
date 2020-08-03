@@ -16,6 +16,7 @@
 		265D504F24D78C10004528B4 /* tipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D504E24D78C10004528B4 /* tipTests.swift */; };
 		265D505A24D78C10004528B4 /* tipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D505924D78C10004528B4 /* tipUITests.swift */; };
 		26903EF524D7BF6D00B7AAEC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26903EF424D7BF6D00B7AAEC /* SettingsViewController.swift */; };
+		26903EF724D804AF00B7AAEC /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26903EF624D804AF00B7AAEC /* HighlightedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		265D505924D78C10004528B4 /* tipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipUITests.swift; sourceTree = "<group>"; };
 		265D505B24D78C10004528B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26903EF424D7BF6D00B7AAEC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		26903EF624D804AF00B7AAEC /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				265D504024D78C10004528B4 /* Assets.xcassets */,
 				265D504224D78C10004528B4 /* LaunchScreen.storyboard */,
 				265D504524D78C10004528B4 /* Info.plist */,
+				26903EF624D804AF00B7AAEC /* HighlightedButton.swift */,
 			);
 			path = tip;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				265D503C24D78C0F004528B4 /* TipViewController.swift in Sources */,
+				26903EF724D804AF00B7AAEC /* HighlightedButton.swift in Sources */,
 				265D503824D78C0F004528B4 /* AppDelegate.swift in Sources */,
 				265D503A24D78C0F004528B4 /* SceneDelegate.swift in Sources */,
 				26903EF524D7BF6D00B7AAEC /* SettingsViewController.swift in Sources */,

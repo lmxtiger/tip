@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+//    var op1: Double = 0
+//    var op2: Double = 0
+//    var op3: Double = 0
 
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipPercentageLabel: UILabel!
@@ -18,6 +21,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+        if defaults.double(forKey: "op1") == 0.0 {
+            defaults.set(15, forKey: "op1")
+        }
+        if defaults.double(forKey: "op2") == 0.0 {
+            defaults.set(18, forKey: "op2")
+        }
+        if defaults.double(forKey: "op3") == 0.0 {
+            defaults.set(20, forKey: "op3")
+        }
+        // Set cursor focus to the bill amount text field
+        billAmountTextField.becomeFirstResponder()
     }
 
     @IBAction func onTap(_ sender: Any) {
@@ -28,7 +43,9 @@ class ViewController: UIViewController {
         // Get the bill amount
         let bill = Double (billAmountTextField.text!) ?? 0
         let defaults = UserDefaults.standard
-        let tipPercentages = [0.15, 0.18, 0.2]
+        let tipPercentages = [defaults.double(forKey: "op1")/100,
+                              defaults.double(forKey: "op2")/100,
+                              defaults.double(forKey: "op3")/100]
         
         // Calculate the tip and total
         let tip = bill * tipPercentages[tipAmountSegmentControl.selectedSegmentIndex]
@@ -45,12 +62,12 @@ class ViewController: UIViewController {
         // This is a good place to retrieve the default tip percentage from UserDefaults
         // and use it to update the tip amount
         let defaults = UserDefaults.standard
-        let op1 = defaults.double(forKey: "op1") ?? 15
-        let op2 = defaults.double(forKey: "op2") ?? 18
-        let op3 = defaults.double(forKey: "op3") ?? 20
-//        tipAmountSegmentControl.setTitle(op1.string += "%", forSegmentAtIndex: 0)
-//        tipAmountSegmentControl.setTitle(op2.string += "%", forSegmentAtIndex: 1)
-//        tipAmountSegmentControl.setTitle(op3.string += "%", forSegmentAtIndex: 2)
+        let op1 = defaults.double(forKey: "op1")
+        let op2 = defaults.double(forKey: "op2")
+        let op3 = defaults.double(forKey: "op3")
+        tipAmountSegmentControl.setTitle(op1.description + "%", forSegmentAt: 0)
+        tipAmountSegmentControl.setTitle(op2.description + "%", forSegmentAt: 1)
+        tipAmountSegmentControl.setTitle(op3.description + "%", forSegmentAt: 2)
     }
 
     override func viewDidAppear(_ animated: Bool) {
